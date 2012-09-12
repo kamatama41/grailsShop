@@ -26,4 +26,21 @@ class PublisherTests {
         def publisher = new Publisher()
         assert !publisher.validate()
     }
+
+    void test_Persistence() {
+        assert Publisher.count() == 0
+        assert Book.count() == 0
+
+        def publisher = new Publisher(name: 'Test Publisher')
+        def book = new Book(title: 'Test Title', author: 'Test Author', price: 3000, releaseDate: new Date(), isbn13: '1234567890123')
+        publisher.addToBooks(book).save()
+
+        assert Publisher.count() == 1
+        assert Book.count() == 1
+
+        publisher.delete()
+
+        assert Publisher.count() == 0
+        assert Book.count() == 0
+    }
 }
