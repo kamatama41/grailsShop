@@ -16,7 +16,11 @@ class Book {
         author(blank:false)
         price(minSize:0)
         releaseDate()
-        isbn13(matches:"\\p{Digit}{13}")
+        isbn13(matches:"[0-9]{13}")
         imageUrl(nullable : true)
+    }
+
+    String toString() {
+        title
     }
 }

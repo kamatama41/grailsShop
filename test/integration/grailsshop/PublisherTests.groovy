@@ -1,6 +1,5 @@
 package grailsshop
 
-import static org.junit.Assert.*
 import org.junit.*
 
 class PublisherTests {
