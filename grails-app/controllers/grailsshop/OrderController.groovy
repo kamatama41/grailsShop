@@ -14,7 +14,7 @@ class OrderController {
         redirect(action: "cart")
     }
 
-    def searchFlow() {
+    def searchFlow = {
         // 検索
         search {
             on("doSearch").to "search"
@@ -29,7 +29,7 @@ class OrderController {
         }
     }
 
-    def cartFlow() {
+    def cartFlow = {
         start {
             action {
             }
@@ -49,7 +49,7 @@ class OrderController {
         }
     }
 
-    def creditFlow() {
+    def creditFlow = {
         start {
             action {
             }
