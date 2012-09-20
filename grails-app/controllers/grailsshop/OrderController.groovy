@@ -6,7 +6,7 @@ class OrderController {
         redirect(action: "search")
     }
 
-    def goSearh() {
+    def goSearch() {
         redirect(action: "search")
     }
 
@@ -18,14 +18,14 @@ class OrderController {
         // 検索
         search {
             on("doSearch").to "search"
-            on("detail").to "desplayDetail"
+            on("detail").to "displayDetail"
             on("toCart").to "search"
         }
 
         // 詳細
         displayDetail {
             on("search").to "search"
-            on("toCart").to "desplayDetail"
+            on("toCart").to "displayDetail"
         }
     }
 
@@ -45,7 +45,7 @@ class OrderController {
         // カートの中身を編集する
         editCart {
             on("submit").to "showCart"
-            on("cancel").to "showCart   "
+            on("cancel").to "showCart"
         }
     }
 
